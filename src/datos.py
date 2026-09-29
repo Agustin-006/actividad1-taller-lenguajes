@@ -11,7 +11,7 @@ COLUMNAS = {
     "EDAD":       {"tipo": "int",    "completitud": 100},
     "REGION":     {"tipo": "int",    "completitud": 100},
     "AGLOMERADO": {"tipo": "int",    "completitud": 100},
-    "MAS_500":    {"tipo": "string", "completitud": 100},
+    "MAS_500": {"tipo": "bool", "completitud": 100},
     "ANO4":       {"tipo": "int",    "completitud": 100},
     "TRIMESTRE":  {"tipo": "int",    "completitud": 100},
     "ITF":        {"tipo": "int",    "completitud": 72},
@@ -27,6 +27,14 @@ COLUMNAS = {
 #    "minimo"     -> número (0-100) o None si el rol no filtra por completitud
 # ---------------------------------------------------------------------------
 ROLES = {
+    "auditor": {
+        "columnas": list(COLUMNAS.keys()),
+        "orden_por": "nombre",
+        "direccion": "B",
+        "minimo": None,
+    },
+
+
     "docente": {
         "columnas": ["EDAD", "REGION", "ESTADO", "CAT_OCUP"],
         "orden_por": "nombre",
